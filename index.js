@@ -6,7 +6,9 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = process.env.PORT || 3010
 
-app.use(cors())
+app.use(cors({
+    origin: ['http://localhost:3000']
+}))
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -46,7 +48,7 @@ app.post('/sendMessage', async (req, res) => {
         email: ${email}
     </div>
     <div>
-         message: ${message}
+       ${message}
     </div>`
     });
     res.send('Ok')
