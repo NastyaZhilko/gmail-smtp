@@ -46,7 +46,7 @@ app.post('/sendMessage', async (req, res) => {
         email: ${email}
     </div>
     <div>
-        message: ${message}
+         message: ${message}
     </div>`
     });
     res.send('Ok')
